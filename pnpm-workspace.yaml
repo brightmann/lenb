@@ -1,6 +1,18 @@
+# Workspace root: this is a single-package repo, not a monorepo.
+# The packages field is required here: without it, some pnpm versions
+# fail `pnpm install --frozen-lockfile` with "packages field missing or empty".
+packages:
+  - "."
 # Allow postinstall scripts for the packages that need them (contentlayer's
-# esbuild binary, workerd, etc.). pnpm 9+ blocks build scripts by default;
-# without this, `pnpm install` in CI/Workers Builds leaves contentlayer broken.
+# esbuild binary, workerd, etc.). pnpm 9+ blocks build scripts by default.
+# Both spellings are listed so pnpm 9/10 (onlyBuiltDependencies) and
+# pnpm 12 (allowBuilds) each pick up the one they understand.
+onlyBuiltDependencies:
+  - contentlayer
+  - esbuild
+  - protobufjs
+  - unrs-resolver
+  - workerd
 allowBuilds:
   contentlayer: true
   esbuild: true
