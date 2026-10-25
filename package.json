@@ -6,7 +6,7 @@
     "lint": "next lint",
     "analyze": "cross-env ANALYZE=true next build",
     "build": "contentlayer build && next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && cp public/sitemap*.xml public/robots.txt out/ || true",
     "sitemap": "next-sitemap",
     "rss": "ts-node scripts/rss.ts",
     "prettier": "prettier . --write",
