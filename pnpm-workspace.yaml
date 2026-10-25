@@ -1,0 +1,9 @@
+# Allow postinstall scripts for the packages that need them (contentlayer's
+# esbuild binary, workerd, etc.). pnpm 9+ blocks build scripts by default;
+# without this, `pnpm install` in CI/Workers Builds leaves contentlayer broken.
+allowBuilds:
+  contentlayer: true
+  esbuild: true
+  protobufjs: true
+  unrs-resolver: true
+  workerd: true

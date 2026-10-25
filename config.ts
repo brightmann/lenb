@@ -1,13 +1,13 @@
 const config = {
   site: {
     title: '赖同学',
-    url: 'https://laibh.com',
+    url: 'https://lenb.luckypoem.workers.dev',
     description: 'Hexo-Next-Theme Next.js Blog',
     publisherName: '赖同学',
     authorName: [
       {
         name: '赖同学',
-        url: 'https://laibh.com'
+        url: 'https://lenb.luckypoem.workers.dev'
       }
     ]
   },

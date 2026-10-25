@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://laibh.com
+Host: https://lenb.luckypoem.workers.dev
 
 # Sitemaps
-Sitemap: https://laibh.com/sitemap.xml
+Sitemap: https://lenb.luckypoem.workers.dev/sitemap.xml

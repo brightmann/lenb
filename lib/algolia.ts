@@ -22,6 +22,14 @@ export const generateIndex = async (posts: Post[]): Promise<void> => {
   const index = client.initIndex(algolia.ALGOLIA_INDEX);
 
   if (process.env.NODE_ENV === 'production') {
-    await index.saveObjects(objects, { autoGenerateObjectIDIfNotExist: true });
+    // Build must not fail when the search index is unreachable (e.g. the
+    // upstream Algolia app/key is invalid or the build host cannot reach
+    // Algolia): search is a nice-to-have, the homepage is not. Log and
+    // continue instead of failing the prerender of "/".
+    try {
+      await index.saveObjects(objects, { autoGenerateObjectIDIfNotExist: true });
+    } catch (error) {
+      console.warn('generateIndex: Algolia indexing failed, continuing without it:', error);
+    }
   }
 };

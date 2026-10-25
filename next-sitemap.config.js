@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://laibh.com',
+  siteUrl: 'https://lenb.luckypoem.workers.dev',
   generateRobotsTxt: true // (optional)
   // ...other options
 };
